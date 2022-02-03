@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<script src='assets/js/bootstrap.bundle.js'></script>
+<body oncontextmenu="return false">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./img/blacklogo.png">
+    <title>coup de vie | ai</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="./amila.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Playfair+Display:wght@500&family=Press+Start+2P&family=Roboto+Mono:wght@200&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color: black;">
+  <nav class="navbar navbar-expand-lg navbar-dark menu navvy">
+    <div class="container containerthing">
+      <a class="navbar-brand text-white" href="./index.html">
+        COUP DE VIE
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navbarwhole" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="./shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="./amila.html">AI</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- <div class='parentabout'>
+    <div class='about-header childrenabout'>AIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAaiaiaiaiaiaiaiaiaI</div>
+    <div class='childrenabout aboutmain'>AI</div>
+    <div class='about-header childrenabout'>AIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAiaiaiaiaiaiaiaiaiai</div>
+  </div> -->
+  <!--ai-->
+  <div class="am">
+    <h2>AI</h2>
+  </div>
+  <div class="container buttons">
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <button id='startbutton' class='initbutton akira text-black' onclick='init()'>start</button>
+      </div>
+
+      <div class="col-sm-6 text-center" >
+        <button id="checkquotevspeech" class='initbutton akira text-black' onclick='quotevspeech()'>next affirmation</button> 
+      </div>
+
+      <div class="col-sm-6 text-center">
+        <div class='webcam-container'>
+          <canvas id='canvas'></canvas>
+          <p class='akira text-white' id='quote'></p>
+          <div id='response' class="akira"></div>
+        </div>
+      </div>
+      <div class="col-sm-6 text-center">
+        <img id='genimg'>
+      </div>
+
+  </div> 
+
+
+  <div id='posture' class='posture'>
+    <img id='posturepic' class='posturepic justify-content-end' src="" alt="">
+    <div id='label-container' class='akira'></div>
+  </div>
+
+  <main>
+    <div hidden id='speechoutput'></div> 
+    <p id='error' hidden aria-hidden='true' class="akira"> Browser not supported. Try a different browser! </p>
+  </main>
+
+  <div class="ytvidcontainer justify-content-center text-center">
+        <iframe id='workvid' width="560" height="315"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div> 
+
+</body>
+<script>
+  function generateImage(){
+    let randomnum = Math.floor(Math.random()*26)
+    let img = document.getElementById('genimg')
+    img.src = `./genimg/${randomnum}.png`
+  };
+</script>
+<script>
+  function generateVideo(){
+    const videolink = ["https://www.youtube.com/embed/2MoGxae-zyo", "https://www.youtube.com/embed/CYD7f5b_qj4",  "https://www.youtube.com/embed/2pLT-olgUJs", "https://www.youtube.com/watch?v=gUWFmn8f3H4", "https://www.youtube.com/embed/_oXVabWGzEg", "https://www.youtube.com/embed/u6bkOPIv0h8","https://www.youtube.com/embed/f-r4E0LF50I", "https://www.youtube.com/embed/779jI4Rwl5c", "https://www.youtube.com/watch?v=gUWFmn8f3H4", "https://www.youtube.com/embed/0zhvUV1bAVQ", "https://www.youtube.com/embed/cAAB2yjlwhI", "https://www.youtube.com/embed/E3pz23T3nbw", "https://www.youtube.com/embed/lGQa6Glm9nI", "https://www.youtube.com/embed/4Kc3x1wbqNA", "https://www.youtube.com/embed/Qq_KB5z2-os", "https://www.youtube.com/embed/0gTBCdU3lhg", "https://www.youtube.com/embed/jpizoUy4K9s", "https://www.youtube.com/embed/I6UCw2d7f6Q", "https://www.youtube.com/embed/W4eKVKwf3rQ", "https://www.youtube.com/embed/CY6QP4ofwx4", "https://www.youtube.com/embed/m1DBJhxKmiU" , "https://www.youtube.com/embed/rI_6l992GrA", "https://www.youtube.com/embed/M0uO8X3_tEA", "https://www.youtube.com/embed/Y3N_H-FE5jA", "https://www.youtube.com/embed/xbABGepKT2o" , "https://www.youtube.com/embed/k-8T1mPvCzE" , "https://www.youtube.com/embed/9BnVP3Eg_KQ", "https://www.youtube.com/embed/Z90xpWvuUPs", "https://www.youtube.com/embed/zsFJqKgIgfM"];
+    let videolinkrandom = videolink[Math.floor(Math.random()*videolink.length)]
+    let workvid = document.getElementById('workvid')
+    workvid.src = videolinkrandom
+  };
+</script>
+<script>
+    function quotevspeech(){
+      let stringresult = document.getElementById('speechoutput').textContent.toLowerCase();
+      console.log(stringresult)
+      if (stringresult.search(quotegen.toLowerCase()) > -1){ //searches for quote in speech
+        setTimeout(generateQuote, 2000);
+        document.getElementById('speechoutput').innerHTML = ""; //if true shows next quote and resets input speech
+        document.getElementById('response').innerHTML = 'Correct - 1 step taken towards your best self!'
+      }
+      else {
+        console.log('wrong')
+        document.getElementById("response").innerHTML = 'Have a confident posture and read the quote clearly (or restart). Keep Going!'
+      }
+    }
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+
+</html>

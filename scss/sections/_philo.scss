@@ -1,0 +1,136 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+// .line{
+//   width: 100%;
+//   height: auto;
+
+
+// }
+
+html, body { 
+  // disable horizontal scrolling
+  max-width: 100%;
+  overflow-x: hidden;
+  @include media-breakpoint-down(md){
+    margin: 0em 1em 0em 1em;
+  }
+
+}
+.about-con{
+  padding-top: 4em;
+}
+.about-header {
+  color: white;
+  @include akira;
+  @include outline;
+}
+.philo {
+  @include akira;
+}
+.col-lg {
+  color: white !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.childrenabout {
+  float: left;
+  margin-top: 1.5vw;
+  margin-bottom: 1.5vw;
+  text-transform: uppercase;
+
+  @include noHover;
+}
+.aboutmain {
+  @include akira;
+  @include outline-op;
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+.parentabout {
+  margin-left: 0.01vw;
+  margin-right: 0.01vw;
+  width: 100vw;
+  height: auto;
+}
+.ourphilohead {
+  @include akira;
+  color: white;
+  font-size: 1.75vw;
+  @include media-breakpoint-down(md){
+    font-size: 3.50vw;
+  }
+}
+.textphilo {
+  @include monospace;
+  font-size: 1vw;
+  letter-spacing: 0.001vw;
+  @include media-breakpoint-down(md){
+    font-size: 15px;
+  }
+}
+
+.oo ,.a ,.am,.con{
+  display: flex; /* sets a flex container */
+  align-items: center; 
+  justify-content: center;
+  white-space: nowrap;
+  color: white;
+  @include akira;
+  padding-top: 60px;
+  @include media-breakpoint-down(sm){
+    font-size: 3vmax;
+  }
+}
+.oo h2, .a h2 ,.am h2,.con h2{
+  color: white;
+  @include akira;
+  font-size: 4vmax;
+  padding-top: 5px;
+}
+.a::before, 
+.a::after{
+  content: "ABOUTABOUTABOUTABOUTABOUTABOUTABOUTABOUTABOUTABOUT";
+  color: white;
+  @include outline-2;
+}  
+.oo::before, 
+.oo::after{
+  content: "SHOPSHOPSHOPSHOPSHOPSHOPSHOPSHOPSHOPSHOPSHOPSHOP";
+  color: white;
+  @include outline-2;
+}  
+.am::before, 
+.am::after{
+  content: "AIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAIAI";
+  color: white;
+  @include outline-2;
+}  
+.con::before, 
+.con::after{
+  content: "CONTACTCONTACTCONTACTCONTACTCONTACTCONTACTCONTACT";
+  color: white;
+  @include outline-2;
+} 
+
+// .a::before{
+//   content: "UTABOUTABOUTABOUTABOUTABOUTABOUTABOUTABOUT";
+//   color: white;
+//   @include outline;
+//   white-space: nowrap;
+//   @include media-breakpoint-down(sm){
+//     content:"TABOUT";
+//     font-size: 5vmax;
+//   }
+// }
+// .o::before{
+//   content: "SHOPSHOPSHOPSHOPSHOPSHOPSHOPSHOPSHOPSHOP";
+//   color: white;
+//   @include outline;
+//   white-space: nowrap;
+//   @include media-breakpoint-down(sm){
+//     content:"SHOPSHOPSHOPSHOPSHOPSHOP";
+//   }
+// }

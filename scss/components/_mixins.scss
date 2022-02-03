@@ -1,0 +1,51 @@
+@use "../custom" as *;
+//GRADIENT MIXIN
+@mixin background-black {
+  background-color: $primary;
+}
+@mixin outline {
+  -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  font-size: 1.5vmax;
+  font-weight: 1000;
+  &:hover {
+    -webkit-text-fill-color: white;
+  }
+}
+@mixin outline-2{
+  -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  font-size: 4vmax;
+  font-weight: 1000;
+  &:hover {
+    -webkit-text-fill-color: white;
+  }
+}
+
+@mixin akira {
+  font-family: "Archivo Black", sans-serif;
+  color: white;
+  text-transform: uppercase;
+}
+@mixin akira-titles {
+  letter-spacing: 1vmax;
+}
+@mixin outline-op {
+  color: white;
+  font-size: 1.5vmax;
+  font-weight: 1000;
+  &:hover {
+    -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+}
+@mixin noHover {
+  pointer-events: none;
+}
+@mixin monospace {
+  font-family: "Roboto Mono", monospace;
+  color: white;
+}

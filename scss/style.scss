@@ -1,0 +1,16 @@
+@use "custom";
+
+//IMPORT COMPONENTS
+@use "components/animations";
+@use "components/buttons";
+@use "components/mixins";
+@use "components/typography";
+
+//IMPORT SECTIONS
+@use "sections/amila";
+@use "sections/footer";
+@use "sections/intro-section";
+@use "sections/navbar";
+@use "sections/philo";
+@use "sections/shop";
+@use "sections/socials";

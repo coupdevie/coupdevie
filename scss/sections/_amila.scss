@@ -1,0 +1,51 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+#quote {
+  @include akira;
+}
+#canvas {
+  width: 60%;
+  height: auto;
+}
+.akira {
+  @include akira;
+}
+#genimg {
+  width: 60%;
+  height: auto;
+}
+.posturepic {
+  height: 50px;
+  width: auto;
+}
+
+.buttons {
+  margin-top: 200px;
+  @include media-breakpoint-down(sm){
+    margin-top: 15vw;
+  }
+}
+.ytvidcontainer{
+  @include media-breakpoint-down(sm){
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0px;
+    position: relative;
+  }
+
+}
+#workvid{
+  padding-top:40px;
+  padding-bottom: 0px;
+  @include media-breakpoint-down(sm){
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+  }
+}
+body{
+  overflow-x: hidden;
+
+}

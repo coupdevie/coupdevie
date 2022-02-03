@@ -1,0 +1,45 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.navbar-brand {
+  font-family: "Playfair Display", serif;
+  font-size: 29px;
+  margin-top: 0.5vw;
+  margin-left: 1.5vw;
+  @include media-breakpoint-down(sm){
+    font-size: 30px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.navbar-nav {
+  text-transform: uppercase;
+  font-size: 1vw;
+  @include media-breakpoint-down(md){
+    font-size: 6vw;
+  }
+
+}
+.navbarwhole {
+  margin-top: 1vw;
+}
+.navbar-nav > li {
+  padding-right: 7vw;
+  padding-left: 7vw;
+
+}
+.containerthing {
+  margin-left: 1%;
+}
+
+.nav-link {
+  @include outline;
+  @include media-breakpoint-down(md){
+    font-size: 3.5vw;
+  }
+  // font-weight: bolder;
+}
+
+body{
+  overflow-x: hidden;
+}

@@ -1,0 +1,34 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container4shop {
+  @include media-breakpoint-down(sm){
+    margin-top: 10vw;
+  }
+  margin-top: 2vw;
+  align-items: center;
+  img {
+    width: 90%;
+    height: auto;
+    align-items: center;
+    display: block;
+  }
+  .item {
+    text-align: center;
+    font-size: 12px;
+  }
+  .price {
+    text-align: center;
+    font-size: 12px;
+  }
+  h3 {
+    @include akira;
+    text-transform: uppercase;
+  }
+}
+body{
+  overflow-x: hidden;
+}
