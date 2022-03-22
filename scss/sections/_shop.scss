@@ -7,6 +7,7 @@
 .container4shop {
   @include media-breakpoint-down(sm){
     margin-top: 10vw;
+    padding-bottom: 10vw;
   }
   margin-top: 2vw;
   align-items: center;
